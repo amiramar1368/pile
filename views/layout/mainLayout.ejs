@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>گزارش مدیریتی روزانه</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+<style>
+  #message,#message-2{
+  font-size: 15px;
+  margin: 10px;
+  }
+  #div-form{
+    text-align: right;
+    margin:20px 20px 5px 20px;
+  }
+  #time-counter{
+    margin: 5px;
+    font-size: 12px;
+  }
+ input{
+  line-height: 2.3rem;
+  border-radius: 7px;
+  border: 1px solid #ccc9c9;
+}
+#search{
+  background-color: #007bff;
+  color: aliceblue;
+  cursor: pointer;
+  width: 160px;
+}
+#search:hover{
+  opacity: 0.9;
+}
+
+</style>
+</head>
+<body >
+  <div id="div-form" >
+    <form id="report-form" enctype="multipart/form-data">
+      <span dir="rtl" id="show-hide-service" class=" btn btn-info">نمایش/عدم نمایش موقعیت هر سرویس</span>
+      <input  type="submit" value="دریافت گزارش" name="file" id="search" >
+      <button dir="rtl" id="loading" class=" btn btn-primary d-none" disabled>لطفا منتظر بمانید  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
+      <input type="number"   id="pile" required>
+    </form>
+</div>
+<hr>
+      <%-body%> 
+</body>
+<script src="js/axios.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="/js/report.js"></script>
+<script type="text/javascript" src="/js/tableToExcel.js"></script>
+
+</html>
+   
+
