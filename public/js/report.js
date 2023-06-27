@@ -70,9 +70,9 @@ report_form.addEventListener("submit", async (event) => {
   let end_at = pileInfo.data.end_at;
   if (!start_at) {
     search_btn.classList.remove("d-none");
-  loading_btn.classList.add("d-none");
-  search_btn.disabled = false;
-    return
+    loading_btn.classList.add("d-none");
+    search_btn.disabled = false;
+    return;
   }
   if (!end_at) {
     end_at = formatDate(new Date());
@@ -422,6 +422,7 @@ report_form.addEventListener("submit", async (event) => {
   const tonnageInSections_CF2 = {};
   const tonnageInSections_CF3 = {};
   const tonnageInSections_OXIDE = {};
+  let tonnageInSections_Total = {};
   const blocks = [...mine_blocks, "D-saha"];
   for (const block of blocks) {
     if (block.includes("Ton")) {
@@ -436,6 +437,7 @@ report_form.addEventListener("submit", async (event) => {
     tonnageInSections_CF2[block] = {};
     tonnageInSections_CF3[block] = {};
     tonnageInSections_OXIDE[block] = {};
+    tonnageInSections_Total[block] = {};
   }
 
   for (const item in numberInSections) {
@@ -450,6 +452,8 @@ report_form.addEventListener("submit", async (event) => {
         tonnageInSections_CF2[item][`${i}-${i + 20}`] = 0;
         tonnageInSections_CF3[item][`${i}-${i + 20}`] = 0;
         tonnageInSections_OXIDE[item][`${i}-${i + 20}`] = 0;
+
+        tonnageInSections_Total[item][`${i}-${i + 20}`] = 0;
       }
     }
   }
@@ -461,6 +465,7 @@ report_form.addEventListener("submit", async (event) => {
         // inervalInDivided = 60-80 , ...
         if (inervalInDivided == interval) {
           for (const service of divided[inervalInDivided]) {
+            tonnageInSections_Total[block][interval] += service.tonnage;
             if (service.block_name == block) {
               numberInSections[block][interval]++;
               tonnageInSections[block][interval] += service.tonnage;
@@ -515,7 +520,7 @@ report_form.addEventListener("submit", async (event) => {
         <td data-a-h="center" data-t="n">${numberInSections[item]["560-580"]}</td>
         <td data-a-h="center" data-t="n">${numberInSections[item]["580-600"]}</td>
         </tr>`;
-        tbody_tonnage.innerHTML += `<tr>
+    tbody_tonnage.innerHTML += `<tr>
         <td>${item}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections[item]["60-80"]}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections[item]["80-100"]}</td>
@@ -580,7 +585,7 @@ report_form.addEventListener("submit", async (event) => {
         <td data-a-h="center" data-t="n">${numberInSections_CF2[item]["560-580"]}</td>
         <td data-a-h="center" data-t="n">${numberInSections_CF2[item]["580-600"]}</td>
         </tr>`;
-        tbody_tonnage.innerHTML += `<tr>
+    tbody_tonnage.innerHTML += `<tr>
         <td>${item}-CF2</td>
         <td data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["60-80"]}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["80-100"]}</td>
@@ -676,6 +681,39 @@ report_form.addEventListener("submit", async (event) => {
   <td data-a-h="center" data-t="n">${numberInSections_CF3[item]["580-600"]}</td>
   </tr>`;
   }
+
+   tonnageInSections_Total = tonnageInSections_Total[Object.keys(tonnageInSections_Total)[0]];
+
+  tbody_tonnage.innerHTML += `<tr>
+  <td>مجموع</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["60-80"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["80-100"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["100-120"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["120-140"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["140-160"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["160-180"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["180-200"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["200-220"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["220-240"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["240-260"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["260-280"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["280-300"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["300-320"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["320-340"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["340-360"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["360-380"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["380-400"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["400-420"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["420-440"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["440-460"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["460-480"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["480-500"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["500-520"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["520-540"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["540-560"]}</div>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["560-580"]}</td>
+  <td data-a-h="center" data-t="n">${tonnageInSections_Total["580-600"]}</td>
+  </tr>`;
 
   search_btn.disabled = false;
   search_btn.classList.remove("d-none");
