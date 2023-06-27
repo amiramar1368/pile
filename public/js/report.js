@@ -68,6 +68,12 @@ report_form.addEventListener("submit", async (event) => {
   const mine_blocks = pileInfo.data.blocks;
   let start_at = pileInfo.data.start_at;
   let end_at = pileInfo.data.end_at;
+  if (!start_at) {
+    search_btn.classList.remove("d-none");
+  loading_btn.classList.add("d-none");
+  search_btn.disabled = false;
+    return
+  }
   if (!end_at) {
     end_at = formatDate(new Date());
   }
