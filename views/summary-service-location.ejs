@@ -1,6 +1,12 @@
-<div id="main-report" class="container-fluid columns">
-<span id="excel2" class="info btn btn-info">اکسل</span>
-<table id="table2" class="table table-striped table-bordered text-center table-hover" data-cols-width="25,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6" >
+<style>
+    span.info{
+        float: right;
+        margin: 3px;
+    }
+</style>
+<div id="summary-services"  class="d-none m-3">
+    <span id="excel5" class="info btn btn-info">اکسل</span>
+<table id="table5" class="table table-striped table-bordered text-center table-hover" data-cols-width="25,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7" >
     <thead>
         <td data-a-h="center">Block/Section</td>
         <td data-a-h="center">S1</td>
@@ -31,12 +37,6 @@
         <td data-a-h="center">S26</td>
         <td data-a-h="center">S27</td>
     </thead>
-    <tbody id="sections"></tbody>
+    <tbody id="summary-services-sections"></tbody>
 </table>
-
  </div>
- <%-include("./service-location.ejs")%>
- <%-include("./tonnage-location.ejs")%>
- <%-include("./summary-tonnage-location.ejs")%>
- <%-include("./summary-service-location.ejs")%>
-  <script src="/js/report.js"></script>

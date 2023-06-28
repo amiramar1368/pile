@@ -8,4 +8,5 @@ router.post("/pile",Report.pile);
 router.post("/services",Report.services);
 router.post("/sub-rows",Report.sub_rows);
 router.post("/saha",Report.saha_cr);
+router.post("/section-analysis",Report.section_analysis);
 export default router;

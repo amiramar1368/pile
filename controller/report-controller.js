@@ -3,6 +3,7 @@ import { pile_info } from "../helper/pile-info.js";
 import {service} from '../helper/service.js';
 import { sub_row} from '../helper/sub-row.js';
 import {saha_r} from '../helper/saha.js';
+import {section_info} from '../helper/section-info.js';
 
 export class Report {
 
@@ -68,6 +69,23 @@ export class Report {
       };
       var { pile } = req.body;
       var sub = await sub_row(pile,config);
+      return res.json(sub);
+    } catch (err) {
+      res.json(false);
+    }
+  }
+
+  static async section_analysis (req,res){
+    try {
+      var token = process.env.token;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      };
+      var { pile } = req.body;
+      var sub = await section_info(pile,config);
       return res.json(sub);
     } catch (err) {
       res.json(false);

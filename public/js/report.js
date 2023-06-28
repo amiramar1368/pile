@@ -4,6 +4,12 @@ const search_btn = document.getElementById("search");
 const loading_btn = document.getElementById("loading");
 const tbody = document.getElementById("sections");
 const tbody_tonnage = document.getElementById("tonnage-sections");
+const summary_tbody_tonnage = document.getElementById(
+  "summary-tonnage-sections",
+);
+const summary_tbody_services = document.getElementById(
+  "summary-services-sections",
+);
 const service_location = document.getElementById("service-location");
 const services = document.getElementById("services");
 const tonnages = document.getElementById("tonnages");
@@ -12,6 +18,29 @@ const show_tonnage_btn = document.getElementById("show-hide-tonnage");
 const excel = document.getElementById("excel");
 const excel2 = document.getElementById("excel2");
 const excel3 = document.getElementById("excel3");
+const tonnage_detail = document.getElementById("summary-tonnage-btn");
+const service_detail = document.getElementById("summary-service");
+const show_summary_tonnage = document.getElementById("show-summary-tonnage");
+const show_summary_service = document.getElementById("show-summary-service");
+const summary_tonnages = document.getElementById("summary-tonnages");
+const summary_services = document.getElementById("summary-services");
+let tonnageInSections_miningBlock = {};
+let numberInSections_miningBlock = {};
+
+show_summary_service.addEventListener("click", () => {
+  summary_services.classList.remove("d-none");
+  summary_tonnages.classList.add("d-none");
+  services.classList.add("d-none");
+  tonnages.classList.add("d-none");
+  main_report.classList.add("d-none");
+});
+show_summary_tonnage.addEventListener("click", () => {
+  summary_tonnages.classList.remove("d-none");
+  summary_services.classList.add("d-none");
+  services.classList.add("d-none");
+  tonnages.classList.add("d-none");
+  main_report.classList.add("d-none");
+});
 
 excel.addEventListener("click", () => {
   TableToExcel.convert(document.getElementById("table1"));
@@ -24,6 +53,8 @@ excel3.addEventListener("click", () => {
 });
 
 show_service_btn.addEventListener("click", () => {
+  summary_tonnages.classList.add("d-none");
+  summary_services.classList.add("d-none");
   if (main_report.classList.contains("d-none")) {
     services.classList.add("d-none");
     tonnages.classList.add("d-none");
@@ -35,6 +66,8 @@ show_service_btn.addEventListener("click", () => {
   }
 });
 show_tonnage_btn.addEventListener("click", () => {
+  summary_tonnages.classList.add("d-none");
+  summary_services.classList.add("d-none");
   if (main_report.classList.contains("d-none")) {
     services.classList.add("d-none");
     tonnages.classList.add("d-none");
@@ -423,6 +456,7 @@ report_form.addEventListener("submit", async (event) => {
   const tonnageInSections_CF3 = {};
   const tonnageInSections_OXIDE = {};
   let tonnageInSections_Total = {};
+  const tonnageOfBlockInPile = {};
   const blocks = [...mine_blocks, "D-saha"];
   for (const block of blocks) {
     if (block.includes("Ton")) {
@@ -438,6 +472,13 @@ report_form.addEventListener("submit", async (event) => {
     tonnageInSections_CF3[block] = {};
     tonnageInSections_OXIDE[block] = {};
     tonnageInSections_Total[block] = {};
+
+    if (block.includes("D-")) {
+      numberInSections_miningBlock[block] = {};
+      tonnageInSections_miningBlock[block] = {};
+    }
+
+    tonnageOfBlockInPile[block] = 0;
   }
 
   for (const item in numberInSections) {
@@ -457,7 +498,20 @@ report_form.addEventListener("submit", async (event) => {
       }
     }
   }
-
+  numberInSections_miningBlock["mining Block-CF2"] = {};
+  numberInSections_miningBlock["mining Block-CF3"] = {};
+  tonnageInSections_miningBlock["mining Block-CF2"] = {};
+  tonnageInSections_miningBlock["mining Block-CF3"] = {};
+  // return
+  for (const item in numberInSections_miningBlock) {
+    for (let i = 60; i < 600; i += 20) {
+      if (i + 21) {
+        numberInSections_miningBlock[item][`${i}-${i + 20}`] = 0;
+        tonnageInSections_miningBlock[item][`${i}-${i + 20}`] = 0;
+      }
+    }
+  }
+  let isFirstLoop = true;
   for (const block in numberInSections) {
     for (let interval in numberInSections[block]) {
       // interval =60-80 , ...
@@ -466,6 +520,29 @@ report_form.addEventListener("submit", async (event) => {
         if (inervalInDivided == interval) {
           for (const service of divided[inervalInDivided]) {
             tonnageInSections_Total[block][interval] += service.tonnage;
+            if (
+              !service.block_name.includes("D-") &&
+              service.load_name == "CF2" &&
+              isFirstLoop
+            ) {
+              numberInSections_miningBlock["mining Block-CF2"][interval]++;
+              tonnageInSections_miningBlock["mining Block-CF2"][interval] +=
+                service.tonnage;
+            } else if (
+              !service.block_name.includes("D-") &&
+              service.load_name == "CF3" &&
+              isFirstLoop
+            ) {
+              numberInSections_miningBlock["mining Block-CF3"][interval]++;
+              tonnageInSections_miningBlock["mining Block-CF3"][interval] +=
+                service.tonnage;
+            } else if (block.includes("D-")) {
+              if (service.block_name == block) {
+                numberInSections_miningBlock[block][interval]++;
+                tonnageInSections_miningBlock[block][interval] +=
+                  service.tonnage;
+              }
+            }
             if (service.block_name == block) {
               numberInSections[block][interval]++;
               tonnageInSections[block][interval] += service.tonnage;
@@ -484,6 +561,18 @@ report_form.addEventListener("submit", async (event) => {
         }
       }
     }
+    isFirstLoop = false;
+  }
+
+  for (const block of blocks) {
+    for (const tonnage in tonnageInSections) {
+      const tonnages = tonnageInSections[tonnage];
+      for (const item in tonnages) {
+        if (block == tonnage) {
+          tonnageOfBlockInPile[block] += Number(tonnages[item]);
+        }
+      }
+    }
   }
 
   for (let item in numberInSections) {
@@ -491,7 +580,7 @@ report_form.addEventListener("submit", async (event) => {
       continue;
     }
     tbody.innerHTML += `<tr>
-        <td>${item}</td>
+        <td data-a-h="center" style="width:180px">${item}</td>
         <td data-a-h="center" data-t="n">${numberInSections[item]["60-80"]}</td>
         <td data-a-h="center" data-t="n">${numberInSections[item]["80-100"]}</td>
         <td data-a-h="center" data-t="n">${numberInSections[item]["100-120"]}</td>
@@ -521,7 +610,7 @@ report_form.addEventListener("submit", async (event) => {
         <td data-a-h="center" data-t="n">${numberInSections[item]["580-600"]}</td>
         </tr>`;
     tbody_tonnage.innerHTML += `<tr>
-        <td>${item}</td>
+        <td data-a-h="center" style="width:180px">${item}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections[item]["60-80"]}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections[item]["80-100"]}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections[item]["100-120"]}</td>
@@ -556,7 +645,7 @@ report_form.addEventListener("submit", async (event) => {
       continue;
     }
     tbody.innerHTML += `<tr>
-        <td>${item}-CF2</td>
+        <td data-a-h="center" style="width:180px">${item}-CF2</td>
         <td data-a-h="center" data-t="n">${numberInSections_CF2[item]["60-80"]}</td>
         <td data-a-h="center" data-t="n">${numberInSections_CF2[item]["80-100"]}</td>
         <td data-a-h="center" data-t="n">${numberInSections_CF2[item]["100-120"]}</td>
@@ -586,7 +675,7 @@ report_form.addEventListener("submit", async (event) => {
         <td data-a-h="center" data-t="n">${numberInSections_CF2[item]["580-600"]}</td>
         </tr>`;
     tbody_tonnage.innerHTML += `<tr>
-        <td>${item}-CF2</td>
+        <td data-a-h="center" style="width:180px">${item}-CF2</td>
         <td data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["60-80"]}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["80-100"]}</td>
         <td data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["100-120"]}</td>
@@ -621,7 +710,7 @@ report_form.addEventListener("submit", async (event) => {
       continue;
     }
     tbody_tonnage.innerHTML += `<tr>
-  <td>${item}-CF3</td>
+  <td data-a-h="center" style="width:180px">${item}-CF3</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["60-80"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["80-100"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["100-120"]}</td>
@@ -651,7 +740,7 @@ report_form.addEventListener("submit", async (event) => {
   <td data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["580-600"]}</td>
   </tr>`;
     tbody.innerHTML += `<tr>
-  <td>${item}-CF3</td>
+  <td data-a-h="center" style="width:180px">${item}-CF3</td>
   <td data-a-h="center" data-t="n">${numberInSections_CF3[item]["60-80"]}</td>
   <td data-a-h="center" data-t="n">${numberInSections_CF3[item]["80-100"]}</td>
   <td data-a-h="center" data-t="n">${numberInSections_CF3[item]["100-120"]}</td>
@@ -682,10 +771,11 @@ report_form.addEventListener("submit", async (event) => {
   </tr>`;
   }
 
-   tonnageInSections_Total = tonnageInSections_Total[Object.keys(tonnageInSections_Total)[0]];
+  tonnageInSections_Total =
+    tonnageInSections_Total[Object.keys(tonnageInSections_Total)[0]];
 
-  tbody_tonnage.innerHTML += `<tr>
-  <td>مجموع</td>
+  const total_tonage= `<tr>
+  <td data-a-h="center" style="width:180px">مجموع</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["60-80"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["80-100"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["100-120"]}</td>
@@ -714,6 +804,185 @@ report_form.addEventListener("submit", async (event) => {
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["560-580"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["580-600"]}</td>
   </tr>`;
+  tbody_tonnage.innerHTML +=total_tonage;
+  const { data: section_analysis } = await axios.post(
+    "/report/section-analysis",
+    { pile },
+  );
+  const Fe_analysis= `<tr>
+  <td data-a-h="center" style="width:180px">Fe</td>
+  <td data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[2]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[3]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[4]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[5]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[6]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[7]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[8]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[9]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[10]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[11]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[12]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[13]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[14]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[15]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[16]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[17]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[18]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[19]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[20]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[21]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[22]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[23]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[24]["fe"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[25]["fe"]}</div>
+  <td data-a-h="center" data-t="n">${section_analysis[26]["fe"]}</td>
+  </tr>`;
+
+  tbody_tonnage.innerHTML +=Fe_analysis
+
+  const P_analysis= `<tr>
+  <td data-a-h="center" style="width:180px">P</td>
+  <td data-a-h="center" data-t="n">${section_analysis[0]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[1]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[2]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[3]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[4]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[5]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[6]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[7]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[8]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[9]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[10]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[11]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[12]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[13]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[14]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[15]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[16]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[17]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[18]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[19]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[20]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[21]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[22]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[23]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[24]["p"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[25]["p"]}</div>
+  <td data-a-h="center" data-t="n">${section_analysis[26]["p"]}</td>
+  </tr>`;
+
+  tbody_tonnage.innerHTML += P_analysis
+
+  const FeO_analysis = `<tr>
+  <td data-a-h="center" style="width:180px">FeO</td>
+  <td data-a-h="center" data-t="n">${section_analysis[0]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[1]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[2]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[3]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[4]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[5]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[6]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[7]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[8]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[9]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[10]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[11]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[12]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[13]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[14]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[15]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[16]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[17]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[18]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[19]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[20]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[21]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[22]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[23]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[24]["feo"]}</td>
+  <td data-a-h="center" data-t="n">${section_analysis[25]["feo"]}</div>
+  <td data-a-h="center" data-t="n">${section_analysis[26]["feo"]}</td>
+  </tr>`;
+
+  tbody_tonnage.innerHTML += FeO_analysis
+
+  summary_tbody_tonnage.innerHTML = "";
+  for (const item in tonnageInSections_miningBlock) {
+    summary_tbody_tonnage.innerHTML += `<tr>
+      <td data-a-h="center" style="width:180px">${item}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["60-80"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["80-100"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["100-120"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["120-140"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["140-160"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["160-180"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["180-200"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["200-220"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["220-240"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["240-260"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["260-280"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["280-300"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["300-320"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["320-340"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["340-360"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["360-380"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["380-400"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["400-420"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["420-440"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["440-460"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["460-480"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["480-500"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["500-520"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["520-540"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["540-560"]}</div>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["560-580"]}</td>
+      <td data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["580-600"]}</td>
+      </tr>`;
+  }
+
+  summary_tbody_tonnage.innerHTML += total_tonage;
+  summary_tbody_tonnage.innerHTML += Fe_analysis;
+  summary_tbody_tonnage.innerHTML += P_analysis;
+  summary_tbody_tonnage.innerHTML += FeO_analysis;
+
+  summary_tbody_services.innerHTML = "";
+  for (const item in tonnageInSections_miningBlock) {
+    summary_tbody_services.innerHTML += `<tr>
+      <td data-a-h="center" style="width:180px">${item}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["60-80"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["80-100"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["100-120"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["120-140"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["140-160"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["160-180"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["180-200"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["200-220"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["220-240"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["240-260"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["260-280"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["280-300"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["300-320"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["320-340"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["340-360"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["360-380"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["380-400"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["400-420"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["420-440"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["440-460"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["460-480"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["480-500"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["500-520"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["520-540"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["540-560"]}</div>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["560-580"]}</td>
+      <td data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["580-600"]}</td>
+      </tr>`;
+  }
+  summary_tbody_services.innerHTML += Fe_analysis;
+  summary_tbody_services.innerHTML += P_analysis;
+  summary_tbody_services.innerHTML += FeO_analysis;
 
   search_btn.disabled = false;
   search_btn.classList.remove("d-none");
