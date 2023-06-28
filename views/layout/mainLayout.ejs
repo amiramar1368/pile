@@ -33,7 +33,10 @@
 #search:hover{
   opacity: 0.9;
 }
-
+#pile{
+  width: 100px;
+  text-align: center;
+}
 </style>
 </head>
 <body >
@@ -43,7 +46,7 @@
       <span dir="rtl" id="show-summary-service" class=" btn btn-outline-secondary">خلاصه سرویس</span>
       <span dir="rtl" id="show-summary-tonnage" class=" btn btn-outline-warning">خلاصه تناژ</span>
       <span dir="rtl" id="show-hide-tonnage" class=" btn btn-outline-success">تناژ/سرویس</span>
-      <input  type="submit" value="دریافت گزارش" name="file" id="search" >
+      <input  type="submit" value="دریافت گزارش" name="file" id="search">
       <button dir="rtl" id="loading" class=" btn btn-primary d-none" disabled>لطفا منتظر بمانید  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
       <input type="number"   id="pile" required>
     </form>
@@ -51,6 +54,11 @@
 <hr>
       <%-body%> 
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{
+    document.getElementById("pile").focus()
+  })
+</script>
 <script src="js/axios.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="/js/report.js"></script>

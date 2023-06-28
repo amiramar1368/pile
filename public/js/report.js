@@ -18,6 +18,8 @@ const show_tonnage_btn = document.getElementById("show-hide-tonnage");
 const excel = document.getElementById("excel");
 const excel2 = document.getElementById("excel2");
 const excel3 = document.getElementById("excel3");
+const excel4 = document.getElementById("excel4");
+const excel5 = document.getElementById("excel5");
 const tonnage_detail = document.getElementById("summary-tonnage-btn");
 const service_detail = document.getElementById("summary-service");
 const show_summary_tonnage = document.getElementById("show-summary-tonnage");
@@ -50,6 +52,12 @@ excel2.addEventListener("click", () => {
 });
 excel3.addEventListener("click", () => {
   TableToExcel.convert(document.getElementById("table3"));
+});
+excel4.addEventListener("click", () => {
+  TableToExcel.convert(document.getElementById("table4"));
+});
+excel5.addEventListener("click", () => {
+  TableToExcel.convert(document.getElementById("table5"));
 });
 
 show_service_btn.addEventListener("click", () => {
