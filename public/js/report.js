@@ -26,6 +26,8 @@ const show_summary_tonnage = document.getElementById("show-summary-tonnage");
 const show_summary_service = document.getElementById("show-summary-service");
 const summary_tonnages = document.getElementById("summary-tonnages");
 const summary_services = document.getElementById("summary-services");
+const spinner = document.getElementsByClassName("loader");
+const progressBar = document.getElementById("progress");
 let tonnageInSections_miningBlock = {};
 let numberInSections_miningBlock = {};
 
@@ -63,15 +65,11 @@ excel5.addEventListener("click", () => {
 show_service_btn.addEventListener("click", () => {
   summary_tonnages.classList.add("d-none");
   summary_services.classList.add("d-none");
-  if (main_report.classList.contains("d-none")) {
     services.classList.add("d-none");
     tonnages.classList.add("d-none");
-    main_report.classList.remove("d-none");
-  } else {
     services.classList.remove("d-none");
-    tonnages.classList.add("d-none");
     main_report.classList.add("d-none");
-  }
+  
 });
 show_tonnage_btn.addEventListener("click", () => {
   summary_tonnages.classList.add("d-none");
@@ -98,11 +96,29 @@ function formatDate(date) {
 }
 
 report_form.addEventListener("submit", async (event) => {
+  setProgress(0)
+  let z=0
+let timmer =setInterval(()=>{
+  z+=7.14
+  if(z<1401){
+    setProgress(z/14);
+  }
+  
+},100)
+progressBar.classList.remove("d-none")
+  spinner[0].classList.remove("d-none")
   search_btn.classList.add("d-none");
   loading_btn.classList.remove("d-none");
+  show_service_btn.classList.add("d-none");
+  show_tonnage_btn.classList.add("d-none");
+  show_summary_tonnage.classList.add("d-none");
+  show_summary_service.classList.add("d-none");
   search_btn.disabled = true;
   tbody.innerHTML = "";
   tbody_tonnage.innerHTML = "";
+  summary_tbody_tonnage.innerHTML = "";
+  summary_tbody_services.innerHTML = "";
+  service_location.innerHTML = "";
   event.preventDefault();
   const pile = document.getElementById("pile").value;
   const { data: pileInfo } = await axios.post("/report/pile", { pile });
@@ -112,6 +128,10 @@ report_form.addEventListener("submit", async (event) => {
   if (!start_at) {
     search_btn.classList.remove("d-none");
     loading_btn.classList.add("d-none");
+    spinner[0].classList.add("d-none");
+    progressBar.classList.add("d-none")
+    setProgress(0)
+    clearInterval(timmer)
     search_btn.disabled = false;
     return;
   }
@@ -218,7 +238,7 @@ report_form.addEventListener("submit", async (event) => {
     const asfalt = data.asfalt_service;
     services.push(...asfalt.data, ...mojtama.data);
   }
-  // return
+
   //remove extra prop
   for (let i = 0; i < services.length; i++) {
     delete services[i].id;
@@ -302,7 +322,7 @@ report_form.addEventListener("submit", async (event) => {
   }
 
   const intervals = {};
-  // interals contain services between samples
+  // intevals contain services between samples
   for (let i = 0; i < sorted_sub_rows.length; i++) {
     if (sorted_sub_rows[i + 1]) {
       intervals[`${i}-${i + 1}`] = {
@@ -817,7 +837,7 @@ report_form.addEventListener("submit", async (event) => {
     "/report/section-analysis",
     { pile },
   );
-  const Fe_analysis= `<tr>
+  const Fe_analysis= `<tr class="fe">
   <td data-a-h="center" style="width:180px">Fe</td>
   <td data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
   <td data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
@@ -993,8 +1013,17 @@ report_form.addEventListener("submit", async (event) => {
   summary_tbody_services.innerHTML += FeO_analysis;
 
   search_btn.disabled = false;
+  setProgress(0);
+  clearInterval(timmer)
+  progressBar.classList.add("d-none")
   search_btn.classList.remove("d-none");
   loading_btn.classList.add("d-none");
+  show_service_btn.classList.remove("d-none");
+  show_tonnage_btn.classList.remove("d-none");
+  show_summary_tonnage.classList.remove("d-none");
+  show_summary_service.classList.remove("d-none");
+  spinner[0].classList.add("d-none");
+
 });
 
 // 700=>1   742=> 3   Beh=> 6   Apa=>7

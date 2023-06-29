@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
 <style>
   #message,#message-2{
   font-size: 15px;
@@ -42,22 +43,32 @@
 <body >
   <div id="div-form" >
     <form id="report-form" enctype="multipart/form-data">
-      <span dir="rtl" id="show-hide-service" class=" btn btn-outline-info">نمایش/عدم نمایش موقعیت هر سرویس</span>
-      <span dir="rtl" id="show-summary-service" class=" btn btn-outline-secondary">خلاصه سرویس</span>
-      <span dir="rtl" id="show-summary-tonnage" class=" btn btn-outline-warning">خلاصه تناژ</span>
-      <span dir="rtl" id="show-hide-tonnage" class=" btn btn-outline-success">تناژ/سرویس</span>
-      <input  type="submit" value="دریافت گزارش" name="file" id="search">
+      <span dir="rtl" id="show-hide-service" class=" btn btn-outline-info d-none">موقعیت سرویس</span>
+      <span dir="rtl" id="show-summary-service" class=" btn btn-outline-secondary d-none">خلاصه سرویس</span>
+      <span dir="rtl" id="show-summary-tonnage" class=" btn btn-outline-warning d-none">خلاصه تناژ</span>
+      <span dir="rtl" id="show-hide-tonnage" class=" btn btn-outline-success d-none">تناژ/سرویس</span>
+      <input  type="submit" value="جستجو" name="file" id="search">
       <button dir="rtl" id="loading" class=" btn btn-primary d-none" disabled>لطفا منتظر بمانید  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
       <input type="number"   id="pile" required>
     </form>
 </div>
 <hr>
+<div class="m-3">
+  <div id="progress" class="d-none progress-bar">
+    <div class="progress"></div>
+  </div>
+</div>
       <%-body%> 
 </body>
 <script>
   document.addEventListener("DOMContentLoaded",()=>{
     document.getElementById("pile").focus()
-  })
+  });
+
+  function setProgress(progress) {
+  var progressBar = document.querySelector('.progress');
+  progressBar.style.width = progress + '%';
+}
 </script>
 <script src="js/axios.js"></script>
 <script src="js/jquery.min.js"></script>
