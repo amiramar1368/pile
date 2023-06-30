@@ -19,10 +19,10 @@ color_btn.addEventListener("click", () => {
     const interval3 = [min+std*2.1,min+std*3.3];
     const interval4 = [min + std*3.3, max];
     
-    const color1 = "#007FFF";
-    const color2 = "#99CCFF";
-    const color3 = "#99CCFF";
-    const color4 = "#007FFF";
+    const color1 = "#D4EFDF";
+    const color2 = "#82E0AA";
+    const color3 = "#82E0AA";
+    const color4 = "#196F3D";
     for (let j = 1; j < tds.length; j++) {
         const number = Number(tds[j].innerHTML);
         if (number >= interval1[0] && number < interval1[1]) {
@@ -33,9 +33,11 @@ color_btn.addEventListener("click", () => {
           tds[j].style.backgroundColor = color3;
         } else {
           tds[j].style.backgroundColor = color4;
+          tds[j].style.color = "white";
         }
         if(number==0){
           tds[j].style.backgroundColor = "white";
+          tds[j].style.color = "black";
         }
       }   
   }
@@ -44,7 +46,9 @@ color_btn.addEventListener("click", () => {
     legend.classList.remove("d-flex")
     color_btn.classList.add("no-color");
     for (let i = 0; i < all_cells.length; i++) {
-    all_cells[i].style.backgroundColor="transparent"
+    all_cells[i].style.backgroundColor="transparent";
+    all_cells[i].style.color="black";
+
   }
   }
    

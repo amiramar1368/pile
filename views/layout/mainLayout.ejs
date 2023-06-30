@@ -43,12 +43,15 @@
   text-align: center;
   padding: 3px;
 }
+#legend{
+  margin-right: 35%;
+}
 </style>
 </head>
 <body >
   <div id="div-form" >
     <form id="report-form" enctype="multipart/form-data">
-      <span dir="rtl" id="colorify" class=" btn btn-outline-info no-color">اعمال/حذف رنگبندی</span>
+      <span dir="rtl" id="colorify" class=" btn btn-outline-info no-color d-none">اعمال/حذف رنگبندی</span>
       <span dir="rtl" id="show-hide-service" class=" btn btn-outline-info d-none">موقعیت سرویس</span>
       <span dir="rtl" id="show-summary-service" class=" btn btn-outline-secondary d-none">خلاصه سرویس</span>
       <span dir="rtl" id="show-summary-tonnage" class=" btn btn-outline-warning d-none">خلاصه تناژ</span>
@@ -68,9 +71,10 @@
   </div>
 </div>
 <div dir="rtl" id="legend" class="d-none">
-  <div class="legends" >راهنمای رنگبندی :</div>
-  <div class="legends" style="background-color: #99CCFF;">متوسط</div>
-  <div class="legends" style="background-color: #007FFF;">کم یا زیاد</div>
+  <!-- <div class="legends" >راهنمای رنگبندی :</div> -->
+  <div class="legends" style="background-color: #D4EFDF;">کم</div>
+  <div class="legends" style="background-color: #82E0AA;">متوسط</div>
+  <div class="legends" style="background-color: #196F3D; color: white;">زیاد</div>
 </div>
       <%-body%> 
 </body>

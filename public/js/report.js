@@ -107,11 +107,11 @@ let timmer =setInterval(()=>{
   }
   
 },100)
-progressBar.classList.remove("d-none")
+  progressBar.classList.remove("d-none")
   spinner[0].classList.remove("d-none")
   legend.classList.add("d-none")
-    legend.classList.remove("d-flex")
-    color_btn.classList.add("no-color");
+  legend.classList.remove("d-flex")
+  color_btn.classList.add("no-color");
   search_btn.classList.add("d-none");
   loading_btn.classList.remove("d-none");
   show_service_btn.classList.add("d-none");
@@ -1020,9 +1020,10 @@ progressBar.classList.remove("d-none")
   search_btn.disabled = false;
   setProgress(0);
   clearInterval(timmer)
-  progressBar.classList.add("d-none")
-  search_btn.classList.remove("d-none");
+  progressBar.classList.add("d-none");
   loading_btn.classList.add("d-none");
+  search_btn.classList.remove("d-none");
+  color_btn.classList.remove("d-none");
   show_service_btn.classList.remove("d-none");
   show_tonnage_btn.classList.remove("d-none");
   show_summary_tonnage.classList.remove("d-none");
