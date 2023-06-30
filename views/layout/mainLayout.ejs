@@ -38,11 +38,17 @@
   width: 100px;
   text-align: center;
 }
+.legends{
+  width: 150px;
+  text-align: center;
+  padding: 3px;
+}
 </style>
 </head>
 <body >
   <div id="div-form" >
     <form id="report-form" enctype="multipart/form-data">
+      <span dir="rtl" id="colorify" class=" btn btn-outline-info no-color">اعمال/حذف رنگبندی</span>
       <span dir="rtl" id="show-hide-service" class=" btn btn-outline-info d-none">موقعیت سرویس</span>
       <span dir="rtl" id="show-summary-service" class=" btn btn-outline-secondary d-none">خلاصه سرویس</span>
       <span dir="rtl" id="show-summary-tonnage" class=" btn btn-outline-warning d-none">خلاصه تناژ</span>
@@ -52,11 +58,19 @@
       <input type="number"   id="pile" required>
     </form>
 </div>
+<div class="d-none loader">
+  <div class="spinner"></div>
+</div>
 <hr>
 <div class="m-3">
   <div id="progress" class="d-none progress-bar">
     <div class="progress"></div>
   </div>
+</div>
+<div dir="rtl" id="legend" class="d-none">
+  <div class="legends" >راهنمای رنگبندی :</div>
+  <div class="legends" style="background-color: #99CCFF;">متوسط</div>
+  <div class="legends" style="background-color: #007FFF;">کم یا زیاد</div>
 </div>
       <%-body%> 
 </body>
@@ -73,6 +87,8 @@
 <script src="js/axios.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="/js/report.js"></script>
+<script src="/js/std.js"></script>
+<script src="/js/color.js"></script>
 <script type="text/javascript" src="/js/tableToExcel.js"></script>
 
 </html>
