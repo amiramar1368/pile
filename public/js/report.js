@@ -1,6 +1,9 @@
 const report_form = document.getElementById("report-form");
 const main_report = document.getElementById("main-report");
 const search_btn = document.getElementById("search");
+const pile_number = document.getElementsByClassName("pile-number");
+const pile_start = document.getElementsByClassName("pile-start");
+const pile_end = document.getElementsByClassName("pile-end");
 const loading_btn = document.getElementById("loading");
 const tbody = document.getElementById("sections");
 const tbody_tonnage = document.getElementById("tonnage-sections");
@@ -140,6 +143,18 @@ report_form.addEventListener("submit", async (event) => {
   }
   if (!end_at) {
     end_at = formatDate(new Date());
+  }
+  for (let i = 0; i < pile_number.length; i++) {   
+    pile_number[i].innerHTML ="شماره پایل : "
+    pile_start[i].innerHTML = "شروع : "
+    pile_end[i].innerHTML = "پایان : "
+  }
+  for (let i = 0; i < pile_number.length; i++) {   
+    const start = moment(start_at).locale("fa").format("YYYY/MM/DD");
+    const end = moment(end_at).locale("fa").format("YYYY/MM/DD");
+    pile_number[i].innerHTML += pile
+    pile_start[i].innerHTML += start
+    pile_end[i].innerHTML += end
   }
   const workdays = [];
   Date.prototype.addDays = function (days) {
@@ -427,7 +442,9 @@ report_form.addEventListener("submit", async (event) => {
     for (const elem of all_services) {
       const block_name = elem.block_name;
       const load_name = elem.load_name;
-      const unloading_exit_at = elem.unloading_exit_at;
+      const shamshi_date = moment(elem.unloading_exit_at).locale("fa").format("YYYY/MM/DD");
+      const miladi_time = (elem.unloading_exit_at).split(" ")[1].split(".")[0];
+      const unloading_exit_at =shamshi_date + " " +miladi_time;
       const loc = Number(elem.position).toFixed(1);
       locations += `
     <tr>
@@ -844,102 +861,135 @@ report_form.addEventListener("submit", async (event) => {
   );
   const Fe_analysis = `<tr class="fe">
   <td data-a-h="center" style="width:180px">Fe</td>
-  <td data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[2]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[3]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[4]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[5]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[6]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[7]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[8]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[9]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[10]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[11]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[12]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[13]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[14]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[15]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[16]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[17]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[18]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[19]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[20]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[21]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[22]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[23]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[24]["fe"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[25]["fe"]}</div>
-  <td data-a-h="center" data-t="n">${section_analysis[26]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[2]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[3]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[4]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[5]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[6]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[7]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[8]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[9]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[10]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[11]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[12]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[13]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[14]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[15]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[16]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[17]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[18]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[19]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[20]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[21]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[22]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[23]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[24]["fe"]}</td>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[25]["fe"]}</div>
+  <td class="fe-grades" data-a-h="center" data-t="n">${section_analysis[26]["fe"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += Fe_analysis
 
-  const P_analysis = `<tr>
+  const P_analysis = `<tr class="p">
   <td data-a-h="center" style="width:180px">P</td>
-  <td data-a-h="center" data-t="n">${section_analysis[0]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[1]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[2]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[3]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[4]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[5]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[6]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[7]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[8]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[9]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[10]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[11]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[12]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[13]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[14]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[15]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[16]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[17]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[18]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[19]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[20]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[21]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[22]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[23]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[24]["p"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[25]["p"]}</div>
-  <td data-a-h="center" data-t="n">${section_analysis[26]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[0]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[1]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[2]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[3]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[4]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[5]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[6]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[7]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[8]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[9]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[10]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[11]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[12]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[13]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[14]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[15]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[16]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[17]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[18]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[19]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[20]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[21]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[22]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[23]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[24]["p"]}</td>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[25]["p"]}</div>
+  <td class="p-grades" data-a-h="center" data-t="n">${section_analysis[26]["p"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += P_analysis
 
-  const FeO_analysis = `<tr>
+  const FeO_analysis = `<tr class="feo">
   <td data-a-h="center" style="width:180px">FeO</td>
-  <td data-a-h="center" data-t="n">${section_analysis[0]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[1]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[2]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[3]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[4]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[5]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[6]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[7]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[8]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[9]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[10]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[11]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[12]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[13]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[14]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[15]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[16]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[17]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[18]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[19]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[20]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[21]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[22]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[23]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[24]["feo"]}</td>
-  <td data-a-h="center" data-t="n">${section_analysis[25]["feo"]}</div>
-  <td data-a-h="center" data-t="n">${section_analysis[26]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[0]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[1]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[2]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[3]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[4]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[5]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[6]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[7]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[8]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[9]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[10]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[11]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[12]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[13]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[14]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[15]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[16]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[17]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[18]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[19]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[20]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[21]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[22]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[23]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[24]["feo"]}</td>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[25]["feo"]}</div>
+  <td class="feo-grades" data-a-h="center" data-t="n">${section_analysis[26]["feo"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += FeO_analysis
+  const M_analysis = `<tr class="m">
+  <td data-a-h="center" style="width:180px">M</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[0]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[1]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[2]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[3]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[4]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[5]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[6]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[7]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[8]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[9]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[10]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[11]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[12]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[13]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[14]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[15]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[16]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[17]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[18]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[19]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[20]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[21]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[22]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[23]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[24]["m"]}</td>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[25]["m"]}</div>
+  <td class="m-grades" data-a-h="center" data-t="n">${section_analysis[26]["m"]}</td>
+  </tr>`;
+
+  tbody_tonnage.innerHTML += M_analysis
+
 
   summary_tbody_tonnage.innerHTML = "";
   for (const item in tonnageInSections_miningBlock) {
@@ -979,6 +1029,7 @@ report_form.addEventListener("submit", async (event) => {
   summary_tbody_tonnage.innerHTML += Fe_analysis;
   summary_tbody_tonnage.innerHTML += P_analysis;
   summary_tbody_tonnage.innerHTML += FeO_analysis;
+  summary_tbody_tonnage.innerHTML += M_analysis;
 
   summary_tbody_services.innerHTML = "";
   for (const item in tonnageInSections_miningBlock) {
@@ -1016,6 +1067,7 @@ report_form.addEventListener("submit", async (event) => {
   summary_tbody_services.innerHTML += Fe_analysis;
   summary_tbody_services.innerHTML += P_analysis;
   summary_tbody_services.innerHTML += FeO_analysis;
+  summary_tbody_services.innerHTML += M_analysis;
 
   search_btn.disabled = false;
   setProgress(0);
