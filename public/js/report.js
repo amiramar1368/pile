@@ -30,8 +30,6 @@ const spinner = document.getElementsByClassName("loader");
 const progressBar = document.getElementById("progress");
 const legend = document.getElementById("legend");
 const color_btn = document.getElementById("colorify");
-let tonnageInSections_miningBlock = {};
-let numberInSections_miningBlock = {};
 
 show_summary_service.addEventListener("click", () => {
   summary_services.classList.remove("d-none");
@@ -67,11 +65,11 @@ excel5.addEventListener("click", () => {
 show_service_btn.addEventListener("click", () => {
   summary_tonnages.classList.add("d-none");
   summary_services.classList.add("d-none");
-    services.classList.add("d-none");
-    tonnages.classList.add("d-none");
-    services.classList.remove("d-none");
-    main_report.classList.add("d-none");
-  
+  services.classList.add("d-none");
+  tonnages.classList.add("d-none");
+  services.classList.remove("d-none");
+  main_report.classList.add("d-none");
+
 });
 show_tonnage_btn.addEventListener("click", () => {
   summary_tonnages.classList.add("d-none");
@@ -99,14 +97,14 @@ function formatDate(date) {
 
 report_form.addEventListener("submit", async (event) => {
   setProgress(0)
-  let z=0
-let timmer =setInterval(()=>{
-  z+=7.14
-  if(z<1401){
-    setProgress(z/14);
-  }
-  
-},100)
+  let z = 0
+  let timmer = setInterval(() => {
+    z += 7.14
+    if (z < 1401) {
+      setProgress(z / 14);
+    }
+
+  }, 100)
   progressBar.classList.remove("d-none")
   spinner[0].classList.remove("d-none")
   legend.classList.add("d-none")
@@ -490,6 +488,8 @@ let timmer =setInterval(()=>{
   const tonnageInSections_OXIDE = {};
   let tonnageInSections_Total = {};
   const tonnageOfBlockInPile = {};
+  let tonnageInSections_miningBlock = {};
+  let numberInSections_miningBlock = {};
   const blocks = [...mine_blocks, "D-saha"];
   for (const block of blocks) {
     if (block.includes("Ton")) {
@@ -807,7 +807,7 @@ let timmer =setInterval(()=>{
   tonnageInSections_Total =
     tonnageInSections_Total[Object.keys(tonnageInSections_Total)[0]];
 
-  const total_tonage= `<tr>
+  const total_tonage = `<tr>
   <td data-a-h="center" style="width:180px">مجموع</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["60-80"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["80-100"]}</td>
@@ -837,12 +837,12 @@ let timmer =setInterval(()=>{
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["560-580"]}</td>
   <td data-a-h="center" data-t="n">${tonnageInSections_Total["580-600"]}</td>
   </tr>`;
-  tbody_tonnage.innerHTML +=total_tonage;
+  tbody_tonnage.innerHTML += total_tonage;
   const { data: section_analysis } = await axios.post(
     "/report/section-analysis",
     { pile },
   );
-  const Fe_analysis= `<tr class="fe">
+  const Fe_analysis = `<tr class="fe">
   <td data-a-h="center" style="width:180px">Fe</td>
   <td data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
   <td data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
@@ -873,9 +873,9 @@ let timmer =setInterval(()=>{
   <td data-a-h="center" data-t="n">${section_analysis[26]["fe"]}</td>
   </tr>`;
 
-  tbody_tonnage.innerHTML +=Fe_analysis
+  tbody_tonnage.innerHTML += Fe_analysis
 
-  const P_analysis= `<tr>
+  const P_analysis = `<tr>
   <td data-a-h="center" style="width:180px">P</td>
   <td data-a-h="center" data-t="n">${section_analysis[0]["p"]}</td>
   <td data-a-h="center" data-t="n">${section_analysis[1]["p"]}</td>

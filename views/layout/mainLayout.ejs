@@ -39,12 +39,16 @@
   text-align: center;
 }
 .legends{
-  width: 150px;
+  width: 400px;
   text-align: center;
   padding: 3px;
 }
 #legend{
-  margin-right: 35%;
+  margin-right: 10%;
+}
+span.or{
+  font-weight: bold;
+  color: red;
 }
 </style>
 </head>
@@ -72,9 +76,9 @@
 </div>
 <div dir="rtl" id="legend" class="d-none">
   <!-- <div class="legends" >راهنمای رنگبندی :</div> -->
-  <div class="legends" style="background-color: #D4EFDF;">کم</div>
-  <div class="legends" style="background-color: #82E0AA;">متوسط</div>
-  <div class="legends" style="background-color: #196F3D; color: white;">زیاد</div>
+  <div class="legends" style="background-color: #D4EFDF;">[ave &#8723; std]</div>
+  <div dir="ltr" class="legends" style="background-color: #82E0AA;">[ave - 2*std , ave - std] <span class="or">OR</span> [ave + std , ave + 2*std]</div>
+  <div dir="ltr" class="legends" style="background-color: #196F3D; color: white;">[min , ave - 2*std] <span class="or">OR</span> [ave + 2*std,max]</div>
 </div>
       <%-body%> 
 </body>
