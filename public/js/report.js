@@ -34,6 +34,7 @@ const progressBar = document.getElementById("progress");
 const legend = document.getElementById("legend");
 const color_btn = document.getElementById("colorify");
 const color_btn_bis = document.getElementById("colorify-bis");
+const report_title = document.getElementsByClassName("report-title");
 
 show_summary_service.addEventListener("click", () => {
   summary_services.classList.remove("d-none");
@@ -153,9 +154,10 @@ report_form.addEventListener("submit", async (event) => {
   for (let i = 0; i < pile_number.length; i++) {   
     const start = moment(start_at).locale("fa").format("YYYY/MM/DD");
     const end = moment(end_at).locale("fa").format("YYYY/MM/DD");
-    pile_number[i].innerHTML += pile
-    pile_start[i].innerHTML += start
-    pile_end[i].innerHTML += end
+    pile_number[i].innerHTML += pile;
+    pile_start[i].innerHTML += start;
+    pile_end[i].innerHTML += end;
+    report_title[i].innerHTML = `جانمایی سرویسهای تخلیه شده در سنگ شکن  در مقاطع 20 متری پایل ${pile} -- شروع:${start} -- پایان:${end}`
   }
   const workdays = [];
   Date.prototype.addDays = function (days) {
@@ -1077,6 +1079,7 @@ report_form.addEventListener("submit", async (event) => {
   loading_btn.classList.add("d-none");
   search_btn.classList.remove("d-none");
   color_btn.classList.remove("d-none");
+  color_btn_bis.classList.remove("d-none");
   show_service_btn.classList.remove("d-none");
   show_tonnage_btn.classList.remove("d-none");
   show_summary_tonnage.classList.remove("d-none");
