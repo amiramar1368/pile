@@ -1,7 +1,10 @@
 let all_rows = document.getElementsByClassName("tr");
 let all_cells = document.getElementsByClassName("td");
+// const color_number_inSection ={}
 color_btn.addEventListener("click", () => {
   colorify_sections()
+});
+color_btn_bis.addEventListener("click", () => {
   colorify_grades("fe", 50, 52);
   colorify_grades("feo", 14, 16);
   colorify_grades("p", 0.75, 0.95);
@@ -20,6 +23,10 @@ function colorify_sections() {
         array_of_numbers.push(Number(tds[j].innerText))
       }
 
+      // for (let i = 1; i <= 27; i++) {
+      //   color_number_inSection["s"+i]={int1:0,int2:0,int3:0}
+      // }
+      // console.log(color_number_inSection);
       var total = 0;
       for (let i = 0; i < array_of_numbers.length; i++) {
         total += array_of_numbers[i];
@@ -28,11 +35,6 @@ function colorify_sections() {
       const std = sd(array_of_numbers);
       const max = Math.max(...array_of_numbers);
       const min = Math.min(...array_of_numbers);
-
-      // const interval1 = [min, min + (0.7 * std)];
-      // const interval2 = [min + (0.7 * std), min + std * 2.1];
-      // const interval3 = [min + std * 2.1, min + std * 3.3];
-      // const interval4 = [min + std * 3.3, max];
 
       const interval1 = [avg - std, avg + std];
       const interval2 = [avg + std, avg + 2 * std];
@@ -82,12 +84,15 @@ function colorify_grades(param, int1, int2) {
       const number = Number(param_cells[j].innerHTML);
       if (number < int1) {
         param_cells[j].style.backgroundColor = red;
+        param_cells[j].style.color = "black";
         if(param=="p"){
           param_cells[j].style.backgroundColor = yellow;
         }
       } else if (number >= int1 && number <= int2) {
+        param_cells[j].style.color = "black";
         param_cells[j].style.backgroundColor = green;
       } else {
+        param_cells[j].style.color = "black";
         param_cells[j].style.backgroundColor = yellow;
         if(param=="p"){
           param_cells[j].style.backgroundColor = red;
@@ -97,3 +102,6 @@ function colorify_grades(param, int1, int2) {
   }
 
 }
+
+
+ 
