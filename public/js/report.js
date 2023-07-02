@@ -633,64 +633,64 @@ report_form.addEventListener("submit", async (event) => {
       continue;
     }
     tbody.innerHTML += `<tr class="tr">
-        <td class="td" data-a-h="center" style="width:180px">${item}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["60-80"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["80-100"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["100-120"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["120-140"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["140-160"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["160-180"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["180-200"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["200-220"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["220-240"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["240-260"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["260-280"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["280-300"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["300-320"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["320-340"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["340-360"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["360-380"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["380-400"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["400-420"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["420-440"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["440-460"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["460-480"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["480-500"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["500-520"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["520-540"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["540-560"]}</div>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["560-580"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections[item]["580-600"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["60-80"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["80-100"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["100-120"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["120-140"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["140-160"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["160-180"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["180-200"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["200-220"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["220-240"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["240-260"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["260-280"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["280-300"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["300-320"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["320-340"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["340-360"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["360-380"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["380-400"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["400-420"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["420-440"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["440-460"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["460-480"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["480-500"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["500-520"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["520-540"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["540-560"]}</div>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["560-580"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections[item]["580-600"]}</td>
         </tr>`;
     tbody_tonnage.innerHTML += `<tr class="tr">
-        <td class="td" data-a-h="center" style="width:180px">${item}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["60-80"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["80-100"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["100-120"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["120-140"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["140-160"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["160-180"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["180-200"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["200-220"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["220-240"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["240-260"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["260-280"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["280-300"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["300-320"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["320-340"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["340-360"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["360-380"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["380-400"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["400-420"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["420-440"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["440-460"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["460-480"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["480-500"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["500-520"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["520-540"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["540-560"]}</div>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["560-580"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["580-600"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["60-80"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["80-100"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["100-120"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["120-140"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["140-160"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["160-180"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["180-200"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["200-220"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["220-240"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["240-260"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["260-280"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["280-300"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["300-320"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["320-340"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["340-360"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["360-380"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["380-400"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["400-420"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["420-440"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["440-460"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["460-480"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["480-500"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["500-520"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["520-540"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["540-560"]}</div>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["560-580"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections[item]["580-600"]}</td>
         </tr>`;
   }
   for (let item in numberInSections_CF2) {
@@ -698,64 +698,64 @@ report_form.addEventListener("submit", async (event) => {
       continue;
     }
     tbody.innerHTML += `<tr class="tr">
-        <td class="td" data-a-h="center" style="width:180px">${item}-CF2</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["60-80"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["80-100"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["100-120"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["120-140"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["140-160"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["160-180"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["180-200"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["200-220"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["220-240"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["240-260"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["260-280"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["280-300"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["300-320"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["320-340"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["340-360"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["360-380"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["380-400"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["400-420"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["420-440"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["440-460"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["460-480"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["480-500"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["500-520"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["520-540"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["540-560"]}</div>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["560-580"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["580-600"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}-CF2</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["60-80"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["80-100"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["100-120"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["120-140"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["140-160"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["160-180"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["180-200"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["200-220"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["220-240"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["240-260"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["260-280"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["280-300"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["300-320"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["320-340"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["340-360"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["360-380"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["380-400"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["400-420"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["420-440"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["440-460"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["460-480"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["480-500"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["500-520"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["520-540"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["540-560"]}</div>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["560-580"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF2[item]["580-600"]}</td>
         </tr>`;
     tbody_tonnage.innerHTML += `<tr class="tr">
-        <td class="td" data-a-h="center" style="width:180px">${item}-CF2</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["60-80"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["80-100"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["100-120"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["120-140"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["140-160"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["160-180"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["180-200"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["200-220"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["220-240"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["240-260"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["260-280"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["280-300"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["300-320"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["320-340"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["340-360"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["360-380"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["380-400"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["400-420"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["420-440"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["440-460"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["460-480"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["480-500"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["500-520"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["520-540"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["540-560"]}</div>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["560-580"]}</td>
-        <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["580-600"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}-CF2</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["60-80"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["80-100"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["100-120"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["120-140"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["140-160"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["160-180"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["180-200"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["200-220"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["220-240"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["240-260"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["260-280"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["280-300"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["300-320"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["320-340"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["340-360"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["360-380"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["380-400"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["400-420"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["420-440"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["440-460"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["460-480"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["480-500"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["500-520"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["520-540"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["540-560"]}</div>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["560-580"]}</td>
+        <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF2[item]["580-600"]}</td>
         </tr>`;
   }
   for (let item in numberInSections_CF3) {
@@ -763,64 +763,64 @@ report_form.addEventListener("submit", async (event) => {
       continue;
     }
     tbody_tonnage.innerHTML += `<tr class="tr">
-  <td class="td" data-a-h="center" style="width:180px">${item}-CF3</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["60-80"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["80-100"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["100-120"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["120-140"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["140-160"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["160-180"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["180-200"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["200-220"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["220-240"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["240-260"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["260-280"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["280-300"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["300-320"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["320-340"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["340-360"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["360-380"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["380-400"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["400-420"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["420-440"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["440-460"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["460-480"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["480-500"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["500-520"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["520-540"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["540-560"]}</div>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["560-580"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["580-600"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}-CF3</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["60-80"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["80-100"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["100-120"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["120-140"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["140-160"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["160-180"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["180-200"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["200-220"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["220-240"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["240-260"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["260-280"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["280-300"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["300-320"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["320-340"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["340-360"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["360-380"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["380-400"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["400-420"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["420-440"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["440-460"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["460-480"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["480-500"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["500-520"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["520-540"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["540-560"]}</div>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["560-580"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_CF3[item]["580-600"]}</td>
   </tr>`;
     tbody.innerHTML += `<tr class="tr">
-  <td class="td" data-a-h="center" style="width:180px">${item}-CF3</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["60-80"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["80-100"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["100-120"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["120-140"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["140-160"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["160-180"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["180-200"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["200-220"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["220-240"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["240-260"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["260-280"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["280-300"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["300-320"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["320-340"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["340-360"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["360-380"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["380-400"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["400-420"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["420-440"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["440-460"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["460-480"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["480-500"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["500-520"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["520-540"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["540-560"]}</div>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["560-580"]}</td>
-  <td class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["580-600"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}-CF3</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["60-80"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["80-100"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["100-120"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["120-140"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["140-160"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["160-180"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["180-200"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["200-220"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["220-240"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["240-260"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["260-280"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["280-300"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["300-320"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["320-340"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["340-360"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["360-380"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["380-400"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["400-420"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["420-440"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["440-460"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["460-480"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["480-500"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["500-520"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["520-540"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["540-560"]}</div>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["560-580"]}</td>
+  <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_CF3[item]["580-600"]}</td>
   </tr>`;
   }
 
@@ -828,34 +828,34 @@ report_form.addEventListener("submit", async (event) => {
     tonnageInSections_Total[Object.keys(tonnageInSections_Total)[0]];
 
   const total_tonage = `<tr>
-  <td data-a-h="center" style="width:180px">مجموع</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["60-80"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["80-100"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["100-120"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["120-140"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["140-160"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["160-180"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["180-200"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["200-220"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["220-240"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["240-260"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["260-280"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["280-300"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["300-320"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["320-340"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["340-360"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["360-380"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["380-400"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["400-420"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["420-440"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["440-460"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["460-480"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["480-500"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["500-520"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["520-540"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["540-560"]}</div>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["560-580"]}</td>
-  <td data-a-h="center" data-t="n">${tonnageInSections_Total["580-600"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" style="width:180px">مجموع</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["60-80"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["80-100"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["100-120"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["120-140"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["140-160"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["160-180"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["180-200"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["200-220"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["220-240"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["240-260"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["260-280"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["280-300"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["300-320"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["320-340"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["340-360"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["360-380"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["380-400"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["400-420"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["420-440"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["440-460"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["460-480"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["480-500"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["500-520"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["520-540"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["540-560"]}</div>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["560-580"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" data-t="n">${tonnageInSections_Total["580-600"]}</td>
   </tr>`;
   tbody_tonnage.innerHTML += total_tonage;
   const { data: section_analysis } = await axios.post(
@@ -863,132 +863,132 @@ report_form.addEventListener("submit", async (event) => {
     { pile },
   );
   const Fe_analysis = `<tr class="fe tr">
-  <td data-a-h="center" style="width:180px">Fe</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[2]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[3]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[4]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[5]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[6]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[7]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[8]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[9]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[10]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[11]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[12]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[13]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[14]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[15]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[16]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[17]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[18]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[19]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[20]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[21]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[22]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[23]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[24]["fe"]}</td>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[25]["fe"]}</div>
-  <td class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[26]["fe"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" style="width:180px">Fe</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[0]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[1]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[2]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[3]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[4]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[5]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[6]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[7]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[8]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[9]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[10]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[11]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[12]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[13]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[14]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[15]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[16]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[17]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[18]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[19]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[20]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[21]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[22]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[23]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[24]["fe"]}</td>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[25]["fe"]}</div>
+  <td data-b-a-s="thin" class="fe-grades td" data-a-h="center" data-t="n">${section_analysis[26]["fe"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += Fe_analysis
 
   const P_analysis = `<tr class="p tr">
-  <td data-a-h="center" style="width:180px">P</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[0]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[1]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[2]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[3]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[4]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[5]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[6]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[7]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[8]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[9]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[10]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[11]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[12]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[13]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[14]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[15]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[16]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[17]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[18]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[19]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[20]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[21]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[22]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[23]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[24]["p"]}</td>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[25]["p"]}</div>
-  <td class="p-grades td" data-a-h="center" data-t="n">${section_analysis[26]["p"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" style="width:180px">P</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[0]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[1]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[2]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[3]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[4]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[5]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[6]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[7]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[8]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[9]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[10]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[11]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[12]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[13]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[14]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[15]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[16]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[17]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[18]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[19]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[20]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[21]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[22]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[23]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[24]["p"]}</td>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[25]["p"]}</div>
+  <td data-b-a-s="thin" class="p-grades td" data-a-h="center" data-t="n">${section_analysis[26]["p"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += P_analysis
 
   const FeO_analysis = `<tr class="feo tr">
-  <td data-a-h="center" style="width:180px">FeO</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[0]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[1]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[2]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[3]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[4]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[5]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[6]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[7]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[8]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[9]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[10]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[11]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[12]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[13]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[14]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[15]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[16]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[17]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[18]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[19]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[20]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[21]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[22]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[23]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[24]["feo"]}</td>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[25]["feo"]}</div>
-  <td class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[26]["feo"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" style="width:180px">FeO</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[0]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[1]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[2]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[3]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[4]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[5]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[6]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[7]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[8]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[9]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[10]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[11]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[12]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[13]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[14]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[15]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[16]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[17]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[18]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[19]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[20]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[21]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[22]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[23]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[24]["feo"]}</td>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[25]["feo"]}</div>
+  <td data-b-a-s="thin" class="feo-grades td" data-a-h="center" data-t="n">${section_analysis[26]["feo"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += FeO_analysis
   const M_analysis = `<tr class="m tr">
-  <td data-a-h="center" style="width:180px">M</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[0]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[1]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[2]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[3]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[4]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[5]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[6]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[7]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[8]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[9]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[10]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[11]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[12]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[13]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[14]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[15]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[16]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[17]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[18]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[19]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[20]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[21]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[22]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[23]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[24]["m"]}</td>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[25]["m"]}</div>
-  <td class="m-grades td" data-a-h="center" data-t="n">${section_analysis[26]["m"]}</td>
+  <td data-b-a-s="thin" data-a-h="center" style="width:180px">M</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[0]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[1]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[2]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[3]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[4]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[5]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[6]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[7]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[8]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[9]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[10]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[11]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[12]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[13]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[14]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[15]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[16]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[17]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[18]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[19]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[20]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[21]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[22]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[23]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[24]["m"]}</td>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[25]["m"]}</div>
+  <td data-b-a-s="thin" class="m-grades td" data-a-h="center" data-t="n">${section_analysis[26]["m"]}</td>
   </tr>`;
 
   tbody_tonnage.innerHTML += M_analysis
@@ -997,34 +997,34 @@ report_form.addEventListener("submit", async (event) => {
   summary_tbody_tonnage.innerHTML = "";
   for (const item in tonnageInSections_miningBlock) {
     summary_tbody_tonnage.innerHTML += `<tr class="tr">
-      <td class="td" data-a-h="center" style="width:180px">${item}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["60-80"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["80-100"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["100-120"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["120-140"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["140-160"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["160-180"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["180-200"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["200-220"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["220-240"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["240-260"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["260-280"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["280-300"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["300-320"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["320-340"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["340-360"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["360-380"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["380-400"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["400-420"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["420-440"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["440-460"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["460-480"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["480-500"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["500-520"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["520-540"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["540-560"]}</div>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["560-580"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["580-600"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["60-80"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["80-100"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["100-120"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["120-140"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["140-160"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["160-180"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["180-200"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["200-220"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["220-240"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["240-260"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["260-280"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["280-300"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["300-320"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["320-340"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["340-360"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["360-380"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["380-400"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["400-420"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["420-440"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["440-460"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["460-480"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["480-500"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["500-520"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["520-540"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["540-560"]}</div>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["560-580"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["580-600"]}</td>
       </tr>`;
   }
 
@@ -1037,34 +1037,34 @@ report_form.addEventListener("submit", async (event) => {
   summary_tbody_services.innerHTML = "";
   for (const item in tonnageInSections_miningBlock) {
     summary_tbody_services.innerHTML += `<tr class="tr">
-      <td class="td" data-a-h="center" style="width:180px">${item}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["60-80"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["80-100"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["100-120"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["120-140"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["140-160"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["160-180"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["180-200"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["200-220"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["220-240"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["240-260"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["260-280"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["280-300"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["300-320"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["320-340"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["340-360"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["360-380"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["380-400"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["400-420"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["420-440"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["440-460"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["460-480"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["480-500"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["500-520"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["520-540"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["540-560"]}</div>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["560-580"]}</td>
-      <td class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["580-600"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["60-80"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["80-100"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["100-120"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["120-140"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["140-160"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["160-180"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["180-200"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["200-220"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["220-240"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["240-260"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["260-280"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["280-300"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["300-320"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["320-340"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["340-360"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["360-380"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["380-400"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["400-420"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["420-440"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["440-460"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["460-480"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["480-500"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["500-520"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["520-540"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["540-560"]}</div>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["560-580"]}</td>
+      <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${numberInSections_miningBlock[item]["580-600"]}</td>
       </tr>`;
   }
   summary_tbody_services.innerHTML += Fe_analysis;

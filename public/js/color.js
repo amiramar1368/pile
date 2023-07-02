@@ -49,11 +49,14 @@ function colorify_sections() {
         const number = Number(tds[j].innerHTML);
         if (number >= interval1[0] && number < interval1[1]) {
           tds[j].style.backgroundColor = color1;
+          tds[j].setAttribute("data-fill-color", "D4EFDFOO")
         } else if ((number >= interval2[0] && number < interval2[1]) || (number >= interval3[0] && number < interval3[1])) {
           tds[j].style.backgroundColor = color2;
+          tds[j].setAttribute("data-fill-color", "82E0AAOO")
         } else {
           tds[j].style.backgroundColor = color3;
           tds[j].style.color = "white";
+          tds[j].setAttribute("data-fill-color", "196F3DOO")
         }
         if (number == 0) {
           tds[j].style.backgroundColor = "white";
@@ -84,17 +87,22 @@ function colorify_grades(param, int1, int2) {
       const number = Number(param_cells[j].innerHTML);
       if (number < int1) {
         param_cells[j].style.backgroundColor = red;
+        param_cells[j].setAttribute("data-fill-color", "b81212OO")
         param_cells[j].style.color = "black";
-        if(param=="p"){
+        if (param == "p") {
+          param_cells[j].setAttribute("data-fill-color", "ffd700OO")
           param_cells[j].style.backgroundColor = yellow;
         }
       } else if (number >= int1 && number <= int2) {
         param_cells[j].style.color = "black";
         param_cells[j].style.backgroundColor = green;
+        param_cells[j].setAttribute("data-fill-color", "228b22OO");
       } else {
         param_cells[j].style.color = "black";
         param_cells[j].style.backgroundColor = yellow;
-        if(param=="p"){
+        param_cells[j].setAttribute("data-fill-color", "ffd700OO");
+        if (param == "p") {
+          param_cells[j].setAttribute("data-fill-color", "b81212OO")
           param_cells[j].style.backgroundColor = red;
         }
       }
@@ -104,4 +112,3 @@ function colorify_grades(param, int1, int2) {
 }
 
 
- 
