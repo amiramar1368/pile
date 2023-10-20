@@ -35,6 +35,7 @@ const legend = document.getElementById("legend");
 const color_btn = document.getElementById("colorify");
 const color_btn_bis = document.getElementById("colorify-bis");
 const report_title = document.getElementsByClassName("report-title");
+const show_percent_tonnage = document.getElementById("show-percent-tonnage");
 
 show_summary_service.addEventListener("click", () => {
   summary_services.classList.remove("d-none");
@@ -996,7 +997,7 @@ report_form.addEventListener("submit", async (event) => {
 
   summary_tbody_tonnage.innerHTML = "";
   for (const item in tonnageInSections_miningBlock) {
-    summary_tbody_tonnage.innerHTML += `<tr class="tr">
+    summary_tbody_tonnage.innerHTML += `<tr class="tr tonnage-summary">
       <td data-b-a-s="thin" class="td" data-a-h="center" style="width:180px">${item}</td>
       <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["60-80"]}</td>
       <td data-b-a-s="thin" class="td" data-a-h="center" data-t="n">${tonnageInSections_miningBlock[item]["80-100"]}</td>
