@@ -14,15 +14,19 @@ const summary_tbody_services = document.getElementById(
   "summary-services-sections",
 );
 const service_location = document.getElementById("service-location");
+const row_pile_tbody = document.getElementById("row-pile-tbody");
 const services = document.getElementById("services");
+const row_pile_services = document.getElementById("row-pile-services");
 const tonnages = document.getElementById("tonnages");
 const show_service_btn = document.getElementById("show-hide-service");
 const show_tonnage_btn = document.getElementById("show-hide-tonnage");
+const show_row_pile_btn = document.getElementById("show-row-pile");
 const excel = document.getElementById("excel");
 const excel2 = document.getElementById("excel2");
 const excel3 = document.getElementById("excel3");
 const excel4 = document.getElementById("excel4");
 const excel5 = document.getElementById("excel5");
+const excel_row = document.getElementById("excel-row");
 const tonnage_detail = document.getElementById("summary-tonnage-btn");
 const service_detail = document.getElementById("summary-service");
 const show_summary_tonnage = document.getElementById("show-summary-tonnage");
@@ -67,6 +71,9 @@ excel4.addEventListener("click", () => {
 excel5.addEventListener("click", () => {
   TableToExcel.convert(document.getElementById("table5"));
 });
+excel_row.addEventListener("click", () => {
+  TableToExcel.convert(document.getElementById("table-row"));
+});
 
 show_service_btn.addEventListener("click", () => {
   summary_tonnages.classList.add("d-none");
@@ -75,11 +82,22 @@ show_service_btn.addEventListener("click", () => {
   tonnages.classList.add("d-none");
   services.classList.remove("d-none");
   main_report.classList.add("d-none");
+  row_pile_services.classList.add("d-none")
 
+});
+show_row_pile_btn.addEventListener("click", () => {
+  summary_tonnages.classList.add("d-none");
+  summary_services.classList.add("d-none");
+  services.classList.add("d-none");
+  tonnages.classList.add("d-none");
+  services.classList.add("d-none");
+  main_report.classList.add("d-none");
+  row_pile_services.classList.remove("d-none")
 });
 show_tonnage_btn.addEventListener("click", () => {
   summary_tonnages.classList.add("d-none");
   summary_services.classList.add("d-none");
+  row_pile_services.classList.add("d-none")
   if (main_report.classList.contains("d-none")) {
     services.classList.add("d-none");
     tonnages.classList.add("d-none");
@@ -120,6 +138,7 @@ report_form.addEventListener("submit", async (event) => {
   loading_btn.classList.remove("d-none");
   show_service_btn.classList.add("d-none");
   show_tonnage_btn.classList.add("d-none");
+  show_row_pile_btn.classList.add("d-none");
   show_summary_tonnage.classList.add("d-none");
   show_summary_service.classList.add("d-none");
   search_btn.disabled = true;
@@ -128,6 +147,7 @@ report_form.addEventListener("submit", async (event) => {
   summary_tbody_tonnage.innerHTML = "";
   summary_tbody_services.innerHTML = "";
   service_location.innerHTML = "";
+  row_pile_tbody.innerHTML = "";
   event.preventDefault();
   const pile = document.getElementById("pile").value;
   const { data: pileInfo } = await axios.post("/report/pile", { pile });
@@ -436,6 +456,7 @@ report_form.addEventListener("submit", async (event) => {
 
   let locations = "";
   let counter = 1;
+  const servicesForRow =[];
   for (const item of intervalsArray) {
     const piling_code = item.piling_code;
     const start = item.time1;
@@ -443,6 +464,7 @@ report_form.addEventListener("submit", async (event) => {
     const from = item.d1;
     const to = item.d2;
     const all_services = item.services;
+    servicesForRow[piling_code]=[...item.services]
     for (const elem of all_services) {
       const block_name = elem.block_name;
       const load_name = elem.load_name;
@@ -464,9 +486,72 @@ report_form.addEventListener("submit", async (event) => {
     }
   }
   service_location.innerHTML = locations;
+const rowServices={}
+for (let i = 1; i < 23; i++) {
+  rowServices[`row_${i}`]=[]
+}
+for (const pilingCode in servicesForRow) {
+    const first_ =pilingCode.indexOf("-");;
+    const second_ =pilingCode.lastIndexOf("-");
+    const rowNumber ="row_"+ pilingCode.substring(first_+1,second_);
 
-  const finalArrayOfSubrows = [];
+    for (const key in rowServices) {
+        if(rowNumber===key){
+          rowServices[key].push(...servicesForRow[pilingCode])
+        }
+    }
+    
+}
 
+let groupByBlockName={};
+for (const key in rowServices) {
+   const BlockNameGrouped = Object.groupBy(rowServices[key], ({ block_name }) => block_name); 
+   groupByBlockName[key]=BlockNameGrouped
+}
+
+let groupByloadType={};
+for (const key in groupByBlockName) {
+    groupByloadType[key]={};
+    for (const origin in groupByBlockName[key]) {
+        const loadTypeGrouped = Object.groupBy(groupByBlockName[key][origin], ({ load_name }) => load_name); 
+        groupByloadType[key][origin]=loadTypeGrouped
+    }
+}
+let rowRecords="";
+let whiteColor =true
+for (const rowNumber in groupByloadType) {
+  const row = rowNumber.split("_")[1]
+  const recordInRow = groupByloadType[rowNumber]
+  let red 
+  let green 
+  let blue 
+  if(whiteColor){
+     red =200
+   green =200
+   blue =200;
+   whiteColor = !whiteColor
+  }else{
+    red =255
+    green =255
+    blue =255;
+    whiteColor = !whiteColor
+  }
+    for (const block_name in recordInRow) {
+      const loadTypeInRow = recordInRow[block_name]
+      for (const loadType in loadTypeInRow) {
+        rowRecords += `
+        <tr style="background-color: rgb(${red},${green},${blue});">
+      <td  data-b-a-s="thin" data-a-h="center">${row}</td>
+      <td data-b-a-s="thin" data-a-h="center">${block_name}</td>
+      <td data-b-a-s="thin" data-a-h="center">${loadType}</td>
+      <td data-b-a-s="thin" data-a-h="center">${loadTypeInRow[loadType].length}</td>
+    </tr>
+        `
+      }
+    }
+}
+row_pile_tbody.innerHTML = rowRecords
+const finalArrayOfSubrows = [];
   for (const item of intervalsArray) {
     let services = item.services;
     for (const elem of services) {
@@ -1083,6 +1168,7 @@ report_form.addEventListener("submit", async (event) => {
   color_btn_bis.classList.remove("d-none");
   show_service_btn.classList.remove("d-none");
   show_tonnage_btn.classList.remove("d-none");
+  show_row_pile_btn.classList.remove("d-none");
   show_summary_tonnage.classList.remove("d-none");
   show_summary_service.classList.remove("d-none");
   spinner[0].classList.add("d-none");
